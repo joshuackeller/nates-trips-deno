@@ -9,3 +9,5 @@ ENV DENO_INSTALL="/root/.deno"
 ENV PATH="${DENO_INSTALL}/bin:${PATH}"
 
 RUN deno --help
+
+RUN npm install pm2 -g
