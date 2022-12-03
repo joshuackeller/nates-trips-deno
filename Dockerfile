@@ -1,7 +1,5 @@
 FROM node
 
-WORKDIR /nates-trips-deno
-
 # Install Dependencies
 RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 ENV DENO_INSTALL="/root/.deno"
@@ -10,6 +8,7 @@ RUN npm install pm2 -g
 
 # Setup dir
 RUN mkdir /nates-trips-deno
+WORKDIR /nates-trips-deno
 COPY . /nates-trips-deno
 
 # Run server
