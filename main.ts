@@ -19,7 +19,7 @@ const select = `
 const router = new Router();
 router
   .get("/", (context) => {
-    context.response.body = "hello there";
+    context.response.body = "hello there - obiwan kenobi";
   })
   .get("/activities", async (context) => {
     try {

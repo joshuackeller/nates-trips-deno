@@ -1,0 +1,24 @@
+{
+  "executionRoleArn": "arn:aws:iam::609946765885:role/ecsTaskExecutionRole",
+  "containerDefinitions": [
+    {
+      "name": "nate-deno",
+      "image": "<IMAGE1_NAME>",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "protocol": "tcp",
+          "containerPort": 4000
+        }
+      ]
+    }
+  ],
+  "requiresCompatibilities": [
+    "FARGATE"
+  ],
+  "networkMode": "awsvpc",
+  "cpu": "256",
+  "memory": "512",
+  "family": "ecs-demo"
+}
