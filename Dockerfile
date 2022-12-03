@@ -15,7 +15,7 @@ RUN git clone https://github.com/joshuackeller/nates-trips-deno.git
 
 # Run
 EXPOSE 4000
-CMD pm2 start /nates-trips-deno/main.ts --interpreter="deno" --interpreter-args="run --allow-net" 
+# CMD pm2 start /nates-trips-deno/main.ts --interpreter="deno" --interpreter-args="run --allow-net" 
 
 
 
