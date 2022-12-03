@@ -9,7 +9,7 @@ ENV PATH="${DENO_INSTALL}/bin:${PATH}"
 RUN npm install pm2 -g
 
 # Setup dir
-RUN mkdir -p /nates-trips-deno
+RUN mkdir /nates-trips-deno
 COPY . /nates-trips-deno
 
 # Run server
