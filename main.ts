@@ -22,22 +22,34 @@ router
     context.response.body = "hello there";
   })
   .get("/activities", async (context) => {
-    const records = await client.query(
-      `select ${select} from activity
-      join destination on activity.destinationId=destination.id
-      join picture on activity.id=picture.activityId`,
-    );
-    context.response.body = records;
+    try {
+      const records = await client.query(
+        `select ${select} from activity
+        join destination on activity.destinationId=destination.id
+        join picture on activity.id=picture.activityId`,
+      );
+      context.response.body = records;
+    } catch (error) {
+      context.response.body = {
+        error,
+      };
+    }
   })
   .get("/activities/:id", async (context) => {
-    const records = await client.query(
-      `select ${select} from activity
-      join destination on activity.destinationId=destination.id
-      join picture on activity.id=picture.activityId
-      where activity.id = ?`,
-      [context?.params?.id],
-    );
-    context.response.body = records?.[0] || {};
+    try {
+      const records = await client.query(
+        `select ${select} from activity
+        join destination on activity.destinationId=destination.id
+        join picture on activity.id=picture.activityId
+        where activity.id = ?`,
+        [context?.params?.id],
+      );
+      context.response.body = records?.[0] || {};
+    } catch (error) {
+      context.response.body = {
+        error,
+      };
+    }
   });
 
 const app = new Application();
