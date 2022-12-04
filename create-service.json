@@ -1,5 +1,5 @@
 {
-  "taskDefinition": "deno-backend:1",
+  "taskDefinition": "ecs-demo:1",
   "cluster": "deno-backend",
   "loadBalancers": [
     {
