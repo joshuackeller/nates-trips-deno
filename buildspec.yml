@@ -16,7 +16,7 @@ phases:
       - echo ---------------------------------------
       - cat Dockerfile
       - echo ---------------------------------------
-      - docker build -t $REPOSITORY_URI:latest .
+      - docker build -t 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:latest .
       - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
   post_build:
     commands:
