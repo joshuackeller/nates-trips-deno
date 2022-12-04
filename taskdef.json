@@ -2,8 +2,8 @@
   "executionRoleArn": "arn:aws:iam::609946765885:role/ecsTaskExecutionRole",
   "containerDefinitions": [
     {
-      "name": "nate-deno",
-      "image": "<IMAGE1_NAME>",
+      "name": "deno-backend",
+      "image": "deno-backend",
       "essential": true,
       "portMappings": [
         {
