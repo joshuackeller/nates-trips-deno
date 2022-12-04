@@ -17,13 +17,13 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno
       - docker build -t 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:latest .
-      - docker tag 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:latest 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:$IMAGE_TAG
+      # - docker tag 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:latest 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:$IMAGE_TAG
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker images...
       - docker push 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:latest
-      - docker push 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:$IMAGE_TAG
+      # - docker push 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:$IMAGE_TAG
       - echo Writing image definitions file...
       - printf '[{"name":"nate-deno","imageUri":"%s"}]' 609946765885.dkr.ecr.us-east-1.amazonaws.com/nate-deno:$IMAGE_TAG > imagedefinitions.json
 artifacts:
