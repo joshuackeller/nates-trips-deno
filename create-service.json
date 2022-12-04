@@ -3,7 +3,7 @@
   "cluster": "deno-backend",
   "loadBalancers": [
     {
-      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:609946765885:targetgroup/deno-backend-1/9da18c456e40ecaf",
+      "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-1:609946765885:loadbalancer/app/deno-backend-lb/e90935c0e6056b4e",
       "containerName": "deno-backend",
       "containerPort": 4000
     }
